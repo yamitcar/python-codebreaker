@@ -21,6 +21,13 @@ Scenario: i enter a 2 digit number
   Then i should see "Invalid number, the number must have 4 digits"
 
 Scenario: i enter a 4 digit number
-  Given i enter the player game with number "1234"
+  Given i enter the player game with number "5612"
   When i guess with "7890"
   Then i should see "7890: 0M-0PM"
+
+Scenario: i enter a 4 digit and win!
+  Given i enter the player game with number "5612"
+  And i guess with "7890"
+  And i should see "7890: 0M-0PM"
+  When i guess with "5612"
+  Then i should see "5612: Adivinaste!"

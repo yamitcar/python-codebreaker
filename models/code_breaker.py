@@ -1,6 +1,7 @@
 class CodeBreaker:
     
     def __init__(self, secret_code):
+        print(secret_code)
         self.secret_code = str(secret_code)
     
     @property
@@ -28,7 +29,7 @@ class CodeBreaker:
 
     def find_matches_and_partials(self, guess_code):
         result = {'matches': 0, 'partials': 0}
-
+        print(self.secret_code)
         for digit_index, digit in enumerate(guess_code):
             if digit == self.secret_code[digit_index]:
                 result['matches'] += 1

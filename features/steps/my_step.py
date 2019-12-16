@@ -11,6 +11,7 @@ def step_impl(context):
     browser.find_by_tag("a").first.click() #it happens whit headless mode
 
 @then(u'i should see "{text}"')
+@given(u'i should see "{text}"')
 def step_impl(context, text):
     expect(browser.html).to(match(text))
     #browser.quit() #with headless is not necessary
@@ -25,11 +26,14 @@ def step_impl(context):
 
 @given(u'i enter the player game with number "{number}"')
 def step_impl(context, number):
-    step('i enter the game')
-    step(f'i enter the number "{number}"')
-    step('i save the secret')
+    context.execute_steps(u"""
+        given i enter the game
+         when i enter the number "{number}"
+         when i save the secret
+    """.format(number=number))
 
 @when(u'i guess with "{number}"')
+@given(u'i guess with "{number}"')
 def step_impl(context, number):
     browser.fill('your_guess', number)
     browser.find_by_css('.guess').first.click()
