@@ -1,0 +1,4 @@
+*/__pycache__
+__pycache__
+geckodriver.log
+flask_session/

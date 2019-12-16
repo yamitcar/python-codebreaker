@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code breaker</title>
+</head>
+<body>
+    <h1> {{result}} </h1>
+    <h2> Welcome to the jungle, try to guess the secret </h2>
+    <form action="/guess" method="POST">
+        <input type="input" name='your_guess'>
+        <input type="hidden" name='secret_code' value={{secret_code}}>
+        <input type="submit" class='guess' value='guess'>
+    </form>
+</body>
+</html>

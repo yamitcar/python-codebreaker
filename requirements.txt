@@ -1,0 +1,10 @@
+flask
+flask-session
+behave
+splinter[flask]
+nose
+coverage
+mamba
+expects
+lxml
+cssselect
